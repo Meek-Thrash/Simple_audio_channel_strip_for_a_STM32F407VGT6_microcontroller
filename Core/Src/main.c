@@ -107,7 +107,7 @@ float lvlOut = DEFAULT_LVL_OUT;
 float rmsLeft = 0.0f;
 float rmsRight = 0.0f;
 
-uint32_t lastPress = 0;
+uint32_t lastMute = 0;
 
 /* USER CODE END PV */
 
@@ -276,11 +276,11 @@ void processBlock(int32_t *in, int32_t *out)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	uint32_t now = HAL_GetTick();
-	if(now - lastPress >= DEBOUNCE_TIME)
+	if(now - lastMute >= DEBOUNCE_TIME)
 	{
 		//Toggle mute state after debounce interval.
 		muted = !muted;
-		lastPress = now;
+		lastMute = now;
 	}
 }
 /* USER CODE END 0 */
