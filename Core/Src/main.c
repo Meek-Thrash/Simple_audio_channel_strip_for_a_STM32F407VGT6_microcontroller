@@ -49,7 +49,6 @@
 #define HALF_I2S_BUFFER 						I2S_BUFFER_LENGTH / 2
 #define AUX_BUFFER_LENGTH						HALF_I2S_BUFFER / 2
 
-#define NORMALIZED_32_BIT						((1LL << 31) - 1)
 #define NORMALIZED_24_BIT						((1LL << 23) - 1)
 
 #define NUM_ADC_SENSORS							3
